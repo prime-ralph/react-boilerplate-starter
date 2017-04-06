@@ -1,152 +1,94 @@
-<img src="https://raw.githubusercontent.com/react-boilerplate/react-boilerplate-brand/master/assets/banner-metal-optimized.jpg" alt="react boilerplate banner" align="center" />
+# Project Dominion
+---
 
-<br />
+## Introduction
+  In a nutshell, Project Dominion (the lack of a suitable acronym for the actual purpose means this name is likely to be temporary and is only used as the prototype name) is a property mapping/information system with analytical capabilities. 
+  Project Dominion draws inspiration from most modern geographic information systems, with the main difference being that GIS caters to a broad category of geographic and geo/spatial purposes, which means the said systems are often feature-heavy and general-purpose, while Dominion aims to focus on the features PRIME would benefit the most, which will be expounded below. While specific types of GIS might exist, operating and using one usually requires deep knowledge in geoinformatics or other related fields.
 
-<div align="center"><strong>Start your next react project in seconds</strong></div>
-<div align="center">A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</div>
-
-<br />
-
-<div align="center">
-  <!-- Dependency Status -->
-  <a href="https://david-dm.org/react-boilerplate/react-boilerplate">
-    <img src="https://david-dm.org/react-boilerplate/react-boilerplate.svg" alt="Dependency Status" />
-  </a>
-  <!-- devDependency Status -->
-  <a href="https://david-dm.org/react-boilerplate/react-boilerplate#info=devDependencies">
-    <img src="https://david-dm.org/react-boilerplate/react-boilerplate/dev-status.svg" alt="devDependency Status" />
-  </a>
-  <!-- Build Status -->
-  <a href="https://travis-ci.org/react-boilerplate/react-boilerplate">
-    <img src="https://travis-ci.org/react-boilerplate/react-boilerplate.svg" alt="Build Status" />
-  </a>
-  <!-- Test Coverage -->
-  <a href="https://coveralls.io/r/react-boilerplate/react-boilerplate">
-    <img src="https://coveralls.io/repos/github/react-boilerplate/react-boilerplate/badge.svg" alt="Test Coverage" />
-  </a>
-</div>
-<div align="center">
-    <!-- Backers -->
-  <a href="#backers">
-    <img src="https://opencollective.com/react-boilerplate/backers/badge.svg" alt="Backers" />
-  </a>
-      <!-- Sponsors -->
-  <a href="#sponsors">
-    <img src="https://opencollective.com/react-boilerplate/sponsors/badge.svg" alt="Sponsors" />
-  </a>
-  <a href="http://thinkmill.com.au/?utm_source=github&utm_medium=badge&utm_campaign=react-boilerplate">
-    <img alt="Supported by Thinkmill" src="https://thinkmill.github.io/badge/heart.svg" />
-  </a>
-  <!-- Gitter -->
-  <a href="https://gitter.im/mxstbr/react-boilerplate">
-    <img src="https://camo.githubusercontent.com/54dc79dc7da6b76b17bc8013342da9b4266d993c/68747470733a2f2f6261646765732e6769747465722e696d2f6d78737462722f72656163742d626f696c6572706c6174652e737667" alt="Gitter Chat" />
-  </a>
-</div>
-
-<br />
-
-<div align="center">
-  <sub>Created by <a href="https://twitter.com/mxstbr">Max Stoiber</a> and maintained with ❤️ by an amazing <a href="https://github.com/orgs/react-boilerplate/teams/core">team of developers</a>.</sub>
-</div>
-
-## Features
-
-<dl>
-  <dt>Quick scaffolding</dt>
-  <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>
-
-  <dt>Instant feedback</dt>
-  <dd>Enjoy the best DX (Developer eXperience) and code your app at the speed of thought! Your saved changes to the CSS and JS are reflected instantaneously without refreshing the page. Preserve application state even when you update something in the underlying code!</dd>
-
-  <dt>Predictable state management</dt>
-  <dd>Unidirectional data flow allows for change logging and time travel debugging.</dd>
-
-  <dt>Next generation JavaScript</dt>
-  <dd>Use template strings, object destructuring, arrow functions, JSX syntax and more, today.</dd>
-
-  <dt>Next generation CSS</dt>
-  <dd>Write composable CSS that's co-located with your components for complete modularity. Unique generated class names keep the specificity low while eliminating style clashes. Ship only the styles that are on the page for the best performance.</dd>
-
-  <dt>Industry-standard routing</dt>
-  <dd>It's natural to want to add pages (e.g. `/about`) to your application, and routing makes this possible.</dd>
-
-  <dt>Industry-standard i18n internationalization support</dt>
-  <dd>Scalable apps need to support multiple languages, easily add and support multiple languages with `react-intl`.</dd>
-
-  <dt>Offline-first</dt>
-  <dd>The next frontier in performant web apps: availability without a network connection from the instant your users load the app.</dd>
-
-  <dt>SEO</dt>
-  <dd>We support SEO (document head tags management) for search engines that support indexing of JavaScript content. (eg. Google)</dd>
-</dl>
-
-But wait... there's more!
-
-  - *The best test setup:* Automatically guarantee code quality and non-breaking
-    changes. (Seen a react app with 99% test coverage before?)
-  - *Native web app:* Your app's new home? The home screen of your users' phones.
-  - *The fastest fonts:* Say goodbye to vacant text.
-  - *Stay fast*: Profile your app's performance from the comfort of your command
-    line!
-  - *Catch problems:* AppVeyor and TravisCI setups included by default, so your
-    tests get run automatically on Windows and Unix.
-
-There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on how to structure your React.js apps with scalability in mind. It provides rationale for the majority of boilerplate's design decisions.
-
-<sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver</i></sub>
-
-## Quick start
-
-1. Clone this repo using `git clone --depth=1 https://github.com/react-boilerplate/react-boilerplate.git`
-1. Run `npm run setup` to install dependencies and clean the git repo.<br />
-   *We auto-detect `yarn` for installing packages by default, if you wish to force `npm` usage do: `USE_YARN=false npm run setup`*<br />
-   *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
-1. Run `npm run clean` to delete the example app.
-
-Now you're ready to rumble!
-
-> Please note that this boilerplate is **production-ready and not meant for beginners**! If you're just starting out with react or redux, please refer to https://github.com/petehunt/react-howto instead. If you want a solid, battle-tested base to build your next product upon and have some experience with react, this is the perfect start for you.
-
-## Documentation
-
-- [**The Hitchhikers Guide to `react-boilerplate`**](docs/general/introduction.md): An introduction for newcomers to this boilerplate.
-- [Overview](docs/general): A short overview of the included tools
-- [**Commands**](docs/general/commands.md): Getting the most out of this boilerplate
-- [Testing](docs/testing): How to work with the built-in test harness
-- [Styling](docs/css): How to work with the CSS tooling
-- [Your app](docs/js): Supercharging your app with Routing, Redux, simple
-  asynchronicity helpers, etc.
-
-## Supporters
-
-This project would not be possible without the support by these amazing folks. [**Become a sponsor**](https://opencollective.com/react-boilerplate) to get your company in front of thousands of engaged react developers and help us out!
-
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/0/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/1/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/2/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/3/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/4/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/5/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/6/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/7/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/8/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/9/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/9/avatar.svg"></a>
-
-----
-
-<a href="https://opencollective.com/react-boilerplate/backer/0/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/0/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/1/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/1/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/2/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/2/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/3/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/3/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/4/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/4/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/5/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/5/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/6/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/6/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/7/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/7/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/8/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/8/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/9/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/9/avatar.svg"></a>
+  Dominion seeks to complement Sales Information System by means of providing geographical and spatial context, which opens the SIS data to further possibilities, such as spatial processing. There is no overlap: the SIS aims to organize and consolidate general information of the company listings, projects, contacts and inquiries and to make it easy to do so, while Dominion serves as an alternative geospatial view in contrast with the descriptive general view of SIS, and provides additional features. 
 
 
-## License
+  Following are the features considered for Dominion:
+    •	View all listings and projects in map – as layer
+      o	Plot (polygon) support for individual lots, CMID properties, projects
+      o	Same point-based support for rental units
+      o	Display data from SIS (project/listing name)
+      o	Filters and advanced search
+    •	Option to add supplementary layers – editable by users with update privilege, viewable by others
+      o	Key developments
+      o	Landmarks
+      o	Infrastructure
+    •	Scouting features – can be part of layer functionality (NOT INCLUDED IN MVP - MARKED FOR NEXT PHASE)
+      o	Mark points on map for potential listings (as layer)
+      o	Map out planned routes
+      o	Record actual scouting route
 
-This project is licensed under the MIT license, Copyright (c) 2017 Maximilian
-Stoiber. For more information see `LICENSE.md`.
+## Implementation Details
+### Tiling Provider
+  The mapping system can function with a third-party map tiling provider with the benefit of ease-of-use with regards to development and maintenance, but this means that offline functionality of Dominion within office network/premises cannot be attained, as well as data security and the option to customize how the map is tiled and displayed. This also ensures that, even at high access rates, there will be no need to purchase enterprise map tiling plans.
+  A self-hosted map tiling provider, on the other hand, comes with the expense of maintenance and infrastructure expenses. The OpenStreetMap documentation recommends at least 24GB of RAM, 500GB of fast storage (SSD) and a quad-core processor for a dedicated tiling server with 100% world map coverage. This does not even factor in a backup-enabled, distributed / load balancing setup and the maintenance personnel such a setup will likely require.
+  A previous recommendation was to use Google Earth Enterprise since it was made open-source earlier. But only Server and Fusion were open-sourced, the Client and Maps Javascript API were not, and it is in this interest that the OSM stack is now suggested:
+
+  -	A postgres database with PostGIS for geospatial data features, which is the backend
+  -	The OSM data extracts, which are essentially map data imported by osm2pgsql
+  -	The mapnik library for rendering geodata to tiled images
+  -	The renderd binary for priority queueing rendering requests
+  -	The mod_tile apache module for serving cached tiles and handling tile cache invalidation
+  -	An apache webserver for hosting the tiled images
+  -	The osmium library for automating map data updates
+
+  On a related note, the OSM data has been found to be not as thorough as Google Maps data, but that is a minor concern. OpenStreetMaps accepts user contributions, so a suitable workflow for resolving this will probably involve editing and submitting an update to the map, which, upon acceptance, will make its way to our server via the automated map updates.
+  This proposal recommends the use of a self-hosted tile server. A third-party provider might suffice for the first few months/years, but when the free limits are hit eventually a self-hosted map server will outweigh its costs.
+  Reference: https://switch2osm.org/why-switch/ and https://switch2osm.org/serving-tiles/building-a-tile-server-from-packages/ 
+
+### Server Infrastructure
+  The above references also mention the minimum required specifications for the server.
+  The first section will outline pros and cons of a bare metal / on premise server over a cloud server. The next will indicate our current server setup, as well as the costs of a minimum upgrade and an optimal upgrade. The next sections will outline potential costs of going for a cloud server.
+
+  #### On-premise vs. Cloud
+  On-premise in this sense means that the server is locally accessible, as opposed to a remote facility in the case of a cloud server.
+  Cloud providers come with the benefit of less than half the maintenance effort required in on-premise servers, not to mention that it is the provider’s problem that the server hardware be replaced every five years (an industry practice). Cloud providers with multiple data centers also provide CDNs that speed up global connections to the server. The pressing concerns against cloud providers, however, include data security and privacy.
+  On-premise servers come with the front-up costs of building and maintaining your own server architecture, and is probably the greatest hindrance. The five-year server rule makes it harder to invest long-term in an on-prem server, but with personnel adequately knowledgeable in development operations, and proper stepped upgrades the cost is the least of the concerns when going on-premises with infrastructure. The other concerns are electrical costs, that the security is dependent on the DevOps personnel and that the on-premise server relies heavily on the accompanied Internet connection if it is to be accessed online.
+  References: http://www.informationweek.com/cloud/cloud-vs-on-premises-6-benefits-of-keeping-data-private/d/d-id/1323089 and https://betanews.com/2013/11/04/comparing-cloud-vs-on-premise-six-hidden-costs-people-always-forget-about/
+  https://arstechnica.com/civis/viewtopic.php?t=1229125
+
+  #### Current Specifications and Responsibilities
+  Current general-purpose server (prime-heimdallr @ 192.168.1.16)
+  -	Operating System: Ubuntu 16.04
+  -	Processor: AMD A4-6300 APU with Radeon HD Graphics 64-bit
+    -	Dual-core @ 3.7 Ghz
+    -	Radeon HD Graphics means that there is no dedicated video card, it is unsuitable for heavy graphic processing
+  -	4GB RAM, 3193 MB usable for volatile memory
+    -	The difference (800MB~) is being used by Radeon HD Graphics.
+  -	500GB SATA Hard disk drive for data storage
+    -	Speed currently untested.
+  -	No RAID setup (physical disk failure countermeasure), no UPS (power surge/loss countermeasure)
+  -	Current server responsibilities
+    -	Hosts the Athena (database, API and authentication) and Hermes (user interface, data pre-processing) modules of SIS
+  -	Also hosts the is-push-server, the real-time notifications server
+    -	The Node process manager (pm2) hosts two applications:
+  -	hermes-release-server: the SIS application update server
+  -	Mnemosyne v1: company knowledgebase (pending migration as of this writing)
+    -	The Java container servlet (Tomcat) hosts Mnemosyne v2, the updated company knowledgebase.
+    -	Maintains the webserver (apache2), language utilities (HHVM, php-fpm), database (mysqld, postgres) and cache (redis, memcached) systems used by various applications and other systems
+
+  Minimum upgrade recommendation: (recommended for single-country rendering and to improve general purpose task handling)
+    -	A quad-core processor
+    -	Additional 4GB RAM
+    -	500GB SSD (faster storage)
+    -	UPS to protect against power interruptions
+  Optimal upgrade recommendation: (recommended for whole world map rendering, as well as machine learning)
+    -	An octa-core processor
+    -	RAM >= 16 GB (2x8GB)
+    -	1TB SSD
+    -	Dedicated video card, 1GB
+    -	UPS to protect against power interruptions
+    -	RAID setup (2x1TB) optionally for disk redundancy
+
+  Another possibility is to create a distributed sector of servers, but that is beyond the scope of this document, and is probably a bit overkill for the tasks currently undertaken. However, it should be noted that once machine learning has been integrated with the current systems it is imperative that the servers be distributed eventually, to prevent overloading.
+
+### Backend (Persistence and Authentication)
+  The map server currently uses a Postgresql/PostGIS-enabled database to hold the map data.
+  It is recommended that Dominion make use of Athena, the secured database abstraction layer/API built with Laravel on top of the MySQL database. This will enable Dominion to make use of the same tables SIS uses: The login credentials for Dominion and SIS will be the same, and it will be trivial for both systems to access each other’s data.
+  Now this brings database access load into the equation. However, as the answers in this link state, (http://stackoverflow.com/questions/14901508/maximum-concurrent-connections-to-mysql) 10,000 concurrent connections are the normal limit of MySQL databases. Unless there are 10,000+ users at the same time doing operations on the database this means the load will not be a concern.
+  It must be noted though that the security attack vector of having another layer access Athena means it is imperative both SIS and Dominion be further secured, where possible.

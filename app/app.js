@@ -16,6 +16,8 @@ import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
 import 'sanitize.css/sanitize.css';
+import 'leaflet/dist/leaflet.css';
+import 'style-loader!css-loader!styles/material-icons.css';
 
 // Import root app
 import App from 'containers/App';
@@ -43,6 +45,18 @@ import './global-styles';
 
 // Import root routes
 import createRoutes from './routes';
+
+import L from 'leaflet';
+delete L.Icon.Default.prototype._getIconUrl;
+
+// Fix leaflet icon issue w/ react-leaflet. See https://github.com/PaulLeCam/react-leaflet/issues/255
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+});
+
+console.log(process.env.GEODATA_ENDPOINT);
 
 // Create redux store with history
 // this uses the singleton browserHistory provided by react-router

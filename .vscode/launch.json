@@ -10,15 +10,11 @@
             "name": "Launch Chrome",
             "url": "http://localhost:3000",
             // "trace": false,
-            "sourceMaps": true,
-            "userDataDir": "${workspaceRoot}/.vscode/chrome",
+            // "sourceMaps": true,
             "sourceMapPathOverrides": {
-                "webpack:///app/": "${webRoot}/app/",
-                "webpack:///./app/": "${webRoot}/app/",
-                "webpack:///./~/": "${webRoot}/node_modules/",
-                "webpack:///delegated ./node_modules/": "${webRoot}/node_modules/"
+                "webpack:///./app/*": "${webRoot}/*"
             },
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceRoot}/app"
         }
     ]
 }

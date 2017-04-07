@@ -9,5 +9,6 @@ stats.json
 npm-debug.log
 .idea
 
-#env
+# Don't check environment-specific stuff as well. Remove .vscode from check-in when being edited.
 .env
+.chrome

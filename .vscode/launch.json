@@ -5,16 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Chrome",
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome",
             "url": "http://localhost:3000",
-            // "trace": false,
-            // "sourceMaps": true,
+            "webRoot": "${workspaceRoot}/src",
+            "userDataDir": "${workspaceRoot}/.chrome",
             "sourceMapPathOverrides": {
-                "webpack:///./app/*": "${webRoot}/*"
-            },
-            "webRoot": "${workspaceRoot}/app"
+                "webpack:///src/*": "${webRoot}/*"
+            }
         }
     ]
 }

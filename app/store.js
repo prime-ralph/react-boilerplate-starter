@@ -7,6 +7,7 @@ import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
+import { authorize } from 'api/sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -23,6 +24,10 @@ export default function configureStore(initialState = {}, history) {
     applyMiddleware(...middlewares),
   ];
 
+  // const additionalReducers = [
+  //   { auth: authReducer },
+  // ];
+
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
   /* eslint-disable no-underscore-dangle */
   const composeEnhancers =
@@ -31,6 +36,11 @@ export default function configureStore(initialState = {}, history) {
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
   /* eslint-enable */
+
+  // We have to create our initial reducer which includes the api reducer
+  // const rootReducer = combineReducers({
+  //   auth: authReducer,
+  // });
 
   const store = createStore(
     createReducer(),
@@ -41,6 +51,9 @@ export default function configureStore(initialState = {}, history) {
   // Extensions
   store.runSaga = sagaMiddleware.run;
   store.asyncReducers = {}; // Async reducer registry
+
+  // Run api saga
+  store.runSaga(authorize);
 
   // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */

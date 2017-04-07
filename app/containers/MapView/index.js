@@ -45,7 +45,7 @@ MapView.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  MapView: makeSelectMapView(),
+  MapView: makeSelectMapView()
 });
 
 function mapDispatchToProps(dispatch) {

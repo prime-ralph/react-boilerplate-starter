@@ -9,7 +9,6 @@ const selectMapViewDomain = () => (state) => state.get('mapView');
  * Other specific selectors
  */
 
-
 /**
  * Default selector used by MapView
  */
@@ -19,7 +18,12 @@ const makeSelectMapView = () => createSelector(
   (substate) => substate.toJS()
 );
 
+// const makeSelectApi = () => createSelector(
+//   selectMapViewDomain(),
+//   (substate) => substate.toJS()
+// );
+
 export default makeSelectMapView;
 export {
-  selectMapViewDomain,
+  selectMapViewDomain
 };

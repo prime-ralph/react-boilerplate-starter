@@ -14,10 +14,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
+import FontFaceObserver from 'fontfaceobserver';
 import { useScroll } from 'react-router-scroll';
 import 'sanitize.css/sanitize.css';
 import 'leaflet/dist/leaflet.css';
 import 'style-loader!css-loader!styles/material-icons.css';
+import 'style-loader!css-loader!styles/roboto.css';
 
 // Import root app
 import App from 'containers/App';
@@ -46,6 +48,15 @@ import './global-styles';
 // Import root routes
 import createRoutes from './routes';
 
+const robotoObserver = new FontFaceObserver('Roboto', {});
+
+// When Roboto is loaded, add a font-family using Roboto to the body
+robotoObserver.load().then(() => {
+  document.body.classList.add('fontLoaded');
+}, () => {
+  document.body.classList.remove('fontLoaded');
+});
+
 import L from 'leaflet';
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -58,11 +69,21 @@ L.Icon.Default.mergeOptions({
 
 console.log(process.env.GEODATA_ENDPOINT);
 
+// Initialize API record for state access.
+
+
 // Create redux store with history
 // this uses the singleton browserHistory provided by react-router
 // Optionally, this could be changed to leverage a created history
 // e.g. `const browserHistory = useRouterHistory(createBrowserHistory)();`
-const initialState = {};
+const initialState = {
+  auth: {
+    isFetching: false,
+    isAuthenticated: false,
+    user: {},
+    token: null
+  },
+};
 const store = configureStore(initialState, browserHistory);
 
 // Sync history and store, as the react-router-redux reducer

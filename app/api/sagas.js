@@ -38,9 +38,9 @@ function setAuthToken(token) {
 // Individual exports for testing
 export function* authorize() {
   const action = yield take(LOGIN_REQUEST);
-  const response = yield call([apiObj.authService, apiObj.authService.authenticate], action.credentials);
-  console.log(response);
-  yield call(setAuthToken, response.token);
+  // const response = yield call([apiObj.authService, apiObj.authService.authenticate], action.credentials);
+  // console.log(response);
+  // yield call(setAuthToken, response.token);
 }
 
 

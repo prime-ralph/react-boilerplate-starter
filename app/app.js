@@ -29,6 +29,7 @@ import { makeSelectLocationState } from 'containers/App/selectors';
 
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
+import L from 'leaflet';
 
 // Load the favicon, the manifest.json file and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */
@@ -48,6 +49,7 @@ import './global-styles';
 // Import root routes
 import createRoutes from './routes';
 
+
 const robotoObserver = new FontFaceObserver('Roboto', {});
 
 // When Roboto is loaded, add a font-family using Roboto to the body
@@ -57,17 +59,20 @@ robotoObserver.load().then(() => {
   document.body.classList.remove('fontLoaded');
 });
 
-import L from 'leaflet';
+/* eslint-disable no-underscore-dangle */
 delete L.Icon.Default.prototype._getIconUrl;
+/* eslint-enable no-underscore-dangle */
 
 // Fix leaflet icon issue w/ react-leaflet. See https://github.com/PaulLeCam/react-leaflet/issues/255
+/* eslint-disable global-require */
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
+/* eslint-enable global-require */
 
-console.log(process.env.GEODATA_ENDPOINT);
+// console.log(process.env.GEODATA_ENDPOINT);
 
 // Initialize API record for state access.
 
@@ -81,7 +86,7 @@ const initialState = {
     isFetching: false,
     isAuthenticated: false,
     user: {},
-    token: null
+    token: null,
   },
 };
 const store = configureStore(initialState, browserHistory);
@@ -128,6 +133,7 @@ if (module.hot) {
 }
 
 // Chunked polyfill for browsers without Intl support
+
 if (!window.Intl) {
   (new Promise((resolve) => {
     resolve(import('intl'));

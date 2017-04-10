@@ -25,5 +25,5 @@ const makeSelectMapView = () => createSelector(
 
 export default makeSelectMapView;
 export {
-  selectMapViewDomain
+  selectMapViewDomain,
 };

@@ -4,7 +4,7 @@
  *
  */
 
-import { fromJS } from 'immutable';
+import { Record } from 'immutable';
 import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
@@ -12,27 +12,24 @@ import {
   LOGOUT_REQUEST,
 } from './constants';
 
-// const initialApiState = fromJS({});
-const initialAuthState = fromJS({
-    isFetching: false,
-    isAuthenticated: false,
-    user: {},
-    token: null
+const AuthRecord = Record({
+  isFetching: false,
+  isAuthenticated: false,
+  user: {},
+  token: null,
 });
+const initialAuthState = new AuthRecord();
 
-// function apiReducer(state = initialState, action) {
-//   switch (action.type) {
-//     // case LOGIN_REQUEST:
-//     //   return state;
-//     default:
-//       return state;
-//   }
-// }
-
-function authReducer(state = initialState, action) {
+function authReducer(state = initialAuthState, action) {
   switch (action.type) {
-    // case LOGIN_REQUEST:
-    //   return state;
+    case LOGIN_REQUEST:
+      return state.set('isAuthenticated', action.isAuthenticated).set('isFetching', action.isFetching);
+    case LOGIN_SUCCESS:
+      return state.set('isAuthenticated', action.isAuthenticated).set('isFetching', action.isFetching);
+    case LOGIN_FAILURE:
+      return state;
+    case LOGOUT_REQUEST:
+      return state;
     default:
       return state;
   }

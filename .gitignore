@@ -12,3 +12,4 @@ npm-debug.log
 # Don't check environment-specific stuff as well. Remove .vscode from check-in when being edited.
 .env
 .chrome
+.vscode

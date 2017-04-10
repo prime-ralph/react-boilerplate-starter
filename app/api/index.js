@@ -14,13 +14,13 @@ const api = feathers()
   .configure(apiRest.superagent(superagent));
 
 const authService = auth.service(process.env.AUTH_SERVICE);
-//alias for clearer reading
+const authUserService = auth.service(process.env.AUTH_USER_SERVICE);
+// alias for clearer reading
 authService.authenticate = authService.create;
 
-const apiObject = {
+export default {
   auth,
   api,
   authService,
+  authUserService,
 };
-
-export default apiObject;

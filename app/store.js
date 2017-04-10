@@ -5,9 +5,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
+import { authorize } from 'api/sagas';
 import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
-import { authorize } from 'api/sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -24,9 +24,6 @@ export default function configureStore(initialState = {}, history) {
     applyMiddleware(...middlewares),
   ];
 
-  // const additionalReducers = [
-  //   { auth: authReducer },
-  // ];
 
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
   /* eslint-disable no-underscore-dangle */

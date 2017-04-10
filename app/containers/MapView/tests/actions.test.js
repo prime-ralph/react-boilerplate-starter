@@ -6,6 +6,8 @@ import {
   DEFAULT_ACTION,
 } from '../constants';
 
+console.log(process.env.AUTH_ENDPOINT);
+
 describe('MapView actions', () => {
   describe('Default Action', () => {
     it('has a type of DEFAULT_ACTION', () => {

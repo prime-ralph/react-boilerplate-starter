@@ -77,9 +77,9 @@ module.exports = (options) => ({
     }),
     new webpack.NamedModulesPlugin(),
     new Dotenv({
-      path: './.env', 
-      safe: true // lets load the .env.example file as well if .env does not exist
-    })
+      path: './.env',
+      safe: true, // lets load the .env.example file as well if .env does not exist
+    }),
   ]),
   resolve: {
     modules: ['app', 'node_modules'],

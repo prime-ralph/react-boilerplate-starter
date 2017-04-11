@@ -19,19 +19,23 @@ export default function createRoutes(store) {
   return [
     {
       path: '/',
-      name: 'mapView',
+      name: 'mainView',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/MapView/reducer'),
-          import('containers/MapView/sagas'),
-          import('containers/MapView'),
+          import('containers/MainView/reducer'),
+          import('containers/MainView/sagas'),
+          import('containers/MainView'),
+          import('containers/Map/reducer'),
+          import('containers/Map/sagas'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([reducer, sagas, component]) => {
-          injectReducer('mapView', reducer.default);
+        importModules.then(([reducer, sagas, component, mapReducer, mapSagas]) => {
+          injectReducer('mainView', reducer.default);
+          injectReducer('map', mapReducer.default);
           injectSagas(sagas.default);
+          injectSagas(mapSagas.default);
           renderRoute(component);
         });
 

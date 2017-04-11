@@ -74,5 +74,8 @@ injectGlobal`
   .leaflet-container {
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   }
-
+  
+  .sr-only {
+    display: none;
+  }
 `;

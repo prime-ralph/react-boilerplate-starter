@@ -10,6 +10,7 @@ const apiRest = client(process.env.API_ENDPOINT);
 
 const api = feathers()
   .configure(hooks())
+  .configure(apiRest.superagent(superagent))
   .configure(auth({
     storage: window.localStorage,
     header: 'Authorization',
@@ -19,29 +20,35 @@ const api = feathers()
     // service: process.env.AUTH_USER_SERVICE,
     // cookie: 'dominion-token',
     storageKey: 'token',
-  }))
-  .configure(apiRest.superagent(superagent));
+  }));
 
-// const authService = auth.service(process.env.AUTH_SERVICE);
-// const authUserService = auth.service(process.env.AUTH_USER_SERVICE);
-// // alias for clearer reading
-// authService.authenticate = authService.create;
-
-api.authenticate({
-  strategy: 'local',
-  user_name: 'ralph.sto.domingo',
-  password: 'ralph.sto.domingo',
-})
-.then((response) => {
-  console.log('Authenticated!', response, api.get('token'));
-  return api.passport.verifyJWT(response.token);
-}).then((payload) => {
-  console.log('JWT Payload', payload);
-  // console.log(window.localStorage.getItem('token'));
-  // payload.sub
-  // return api.service(process.env.AUTH_USER_SERVICE).query();
-  return '';
+api.service('authenticate').hooks({
+  after: {
+    create(hook) {
+      console.log(hook.result);
+      Object.assign(hook.result, { accessToken: `Bearer ${hook.result.token}` });
+      // const result = Object.assign
+      // delete hook.result.token;
+      return Promise.resolve(hook);
+    },
+  },
 });
+
+// api.authenticate({
+//   strategy: 'jwt',
+//   user_name: 'ralph.sto.domingo',
+//   password: 'ralph.sto.domingo',
+// })
+// .then((response) => {
+//   console.log('Authenticated!', response, api.get('accessToken'));
+//   return api.passport.verifyJWT(response.token);
+// }).then((payload) => {
+//   console.log('JWT Payload', payload);
+//   // console.log(window.localStorage.getItem('token'));
+//   // payload.sub
+//   return api.service(process.env.AUTH_USER_SERVICE).find();
+//   // return '';
+// });
 
 export default {
   api,

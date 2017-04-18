@@ -18,12 +18,15 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import FontFaceObserver from 'fontfaceobserver';
 import { useScroll } from 'react-router-scroll';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
 import 'sanitize.css/sanitize.css';
 import 'leaflet/dist/leaflet.css';
 import 'style-loader!css-loader!styles/material-icons.css';
 import 'style-loader!css-loader!styles/roboto.css';
 import 'leaflet-draw/dist/leaflet.draw.css';
 import CustomMaterialTheme from 'styles/customMUITheme';
+
 
 // Import root app
 import App from 'containers/App';
@@ -52,6 +55,9 @@ import './global-styles';
 
 // Import root routes
 import createRoutes from './routes';
+
+// Needed for onTouchTap
+injectTapEventPlugin();
 
 
 const robotoObserver = new FontFaceObserver('Roboto', {});

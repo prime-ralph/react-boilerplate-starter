@@ -3,6 +3,8 @@
 // See http://blog.mxstbr.com/2016/01/react-apps-with-pages for more information
 // about the code splitting business
 import { getAsyncInjectors } from 'utils/asyncInjectors';
+import { combineForms, createForms } from 'react-redux-form/immutable';
+import { fromJS } from 'immutable';
 
 const errorLoading = (err) => {
   console.error('Dynamic page loading failed', err); // eslint-disable-line no-console
@@ -27,15 +29,19 @@ export default function createRoutes(store) {
           import('containers/MainView'),
           import('containers/Map/reducer'),
           import('containers/Map/sagas'),
+          import('containers/LoginModal/reducer'),
+          import('containers/LoginModal/sagas'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([reducer, sagas, component, mapReducer, mapSagas]) => {
+        importModules.then(([reducer, sagas, component, mapReducer, mapSagas, loginReducer, loginSagas]) => {
           injectReducer('mainView', reducer.default);
           injectReducer('map', mapReducer.default);
+          injectReducer('loginModal', fromJS(combineForms({ login: loginReducer.default }, 'loginModal')));
           injectSagas(sagas.default);
           injectSagas(mapSagas.default);
+          injectSagas(loginSagas.default);
           renderRoute(component);
         });
 

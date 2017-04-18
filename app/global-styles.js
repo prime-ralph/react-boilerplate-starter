@@ -26,12 +26,6 @@ injectGlobal`
     min-width: 100%;
   }
 
-  p,
-  label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.5em;
-  }
-
   .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
